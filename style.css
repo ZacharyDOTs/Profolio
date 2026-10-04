@@ -31,7 +31,8 @@ button{font:inherit;color:inherit}
 .card.started .hit{opacity:0;pointer-events:none}
 
 .bar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;background:rgba(10,10,10,.82);border-top:1px solid var(--line);pointer-events:none}
-.card.started .bar{bottom:auto;top:0;border-top:0;border-bottom:1px solid var(--line)}
+.card.started .bar{bottom:auto;top:0;border-top:0;border-bottom:1px solid var(--line);transition:opacity .2s}
+.card.playing .bar{opacity:0;visibility:hidden;transition:opacity .2s,visibility 0s .2s}
 .tt{font:500 15px var(--sans);color:var(--fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .meta{display:flex;align-items:center;gap:8px;flex:none}
 .cg,.yt{font:400 11px var(--mono);letter-spacing:.06em;color:var(--mut);border:1px solid #4a4a4a;padding:4px 10px;white-space:nowrap}

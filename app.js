@@ -59,10 +59,11 @@ function makeCard(p, hero) {
       node.play().catch(() => {});
     });
     node.addEventListener('play', () => {
-      card.classList.add('started');
+      card.classList.add('started', 'playing');
       document.querySelectorAll('video').forEach(v => { if (v !== node) v.pause(); });
     });
-    node.addEventListener('ended', () => { card.classList.remove('started'); node.controls = false; });
+    node.addEventListener('pause', () => card.classList.remove('playing'));
+    node.addEventListener('ended', () => { card.classList.remove('started', 'playing'); node.controls = false; });
   } else {
     hit.addEventListener('click', () => openLightbox(p, 0));
   }
